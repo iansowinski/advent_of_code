@@ -4,8 +4,12 @@ This is my attempt to solve all AdventOfCode challenges.
 
 ## Contents
 
-- [Day one](#day-1)
-- [Day one](#day-2)
+- [Day 1](#day-1)
+  - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/1-1.go)
+  - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/1-2.go)
+- [Day 2](#day-2)
+  - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/2-1.go)
+  - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/2-2.go)
 
 ## Tasks:
 
@@ -32,7 +36,10 @@ For example:
 1234 produces 0 because no digit matches the next.
 91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
 What is the solution to your captcha?
+```
+**[solution](https://github.com/iansowinski/advent_of_code/blob/master/1-1.go)**
 
+```
 --- Part Two ---
 
 You notice a progress bar that jumps to 50% completion. Apparently, the door isn't yet satisfied, but it did emit a star as encouragement. The instructions change:
@@ -48,6 +55,8 @@ For example:
 12131415 produces 4.
 What is the solution to your new captcha?.
 ```
+
+**[solution](https://github.com/iansowinski/advent_of_code/blob/master/1-2.go)**
 
 ## Day 2
 
@@ -69,7 +78,11 @@ The third row's difference is 6.
 In this example, the spreadsheet's checksum would be 8 + 4 + 6 = 18.
 
 What is the checksum for the spreadsheet in your puzzle input?
+```
 
+**[solution](https://github.com/iansowinski/advent_of_code/blob/master/2-2.go)**
+
+```
 --- Part Two ---
 
 "Great work; looks like we're on the right track after all. Here's a star for your effort." However, the program seems a little worried. Can programs be worried?
@@ -90,3 +103,5 @@ In this example, the sum of the results would be 4 + 3 + 2 = 9.
 
 What is the sum of each row's result in your puzzle input?
 ```
+
+**[solution](https://github.com/iansowinski/advent_of_code/blob/master/2-2.go)**
