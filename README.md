@@ -4,8 +4,8 @@ This is my attempt to solve all AdventOfCode challenges.
 
 ## Contents
 
-- [#day-1](Day one)
-- [#day-2](Day one)
+- [Day one](#day-1)
+- [Day one](#day-2)
 
 ## Tasks:
 
