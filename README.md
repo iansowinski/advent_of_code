@@ -10,10 +10,17 @@ This is my attempt to solve all AdventOfCode challenges.
 - [Day 2](#day-2)
   - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/2-1.go)
   - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/2-2.go)
+- [Day 3](#day-3)
+- [Day 2](#day-4)
+  - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/4-1.go)
+  - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/4-2.go)
+- [Day 5](#day-5)
+  - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/5-1.go)
+  - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/5-2.go)
 
 ## Tasks:
 
-### Day 1
+### [Day 1](https://adventofcode.com/2017/day/1)
 
 ```
 --- Day 1: Inverse Captcha ---
@@ -59,7 +66,7 @@ What is the solution to your new captcha?.
 
 **[solution](https://github.com/iansowinski/advent_of_code/blob/master/1-2.go)**
 
-## Day 2
+### [Day 2](https://adventofcode.com/2017/day/2)
 
 ```
 --- Day 2: Corruption Checksum ---
@@ -107,9 +114,9 @@ What is the sum of each row's result in your puzzle input?
 
 **[solution](https://github.com/iansowinski/advent_of_code/blob/master/2-2.go)**
 
-## Day 3
+### [Day 3](https://adventofcode.com/2017/day/3)
 
-## Day 4
+### [Day 4](https://adventofcode.com/2017/day/4)
 
 ```
 --- Day 4: High-Entropy Passphrases ---
@@ -145,7 +152,7 @@ Under this new system policy, how many passphrases are valid?
 
 **[solution](https://github.com/iansowinski/advent_of_code/blob/master/4-2.go)**
 
-## Day 5
+### [Day 5](https://adventofcode.com/2017/day/5)
 
 ```
 --- Day 5: A Maze of Twisty Trampolines, All Alike ---
