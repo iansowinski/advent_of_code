@@ -5,6 +5,7 @@ import (
 	"strconv"
 	"strings"
 )
+
 func main() {
 	input := "4	1	15	12	0	9	9	5	5	8	7	3	14	5	12	3" //Here put the input
 	// input := "0	2	7	0"
@@ -15,7 +16,7 @@ func main() {
 	}
 	banksHistory := make([]string, 0)
 	i := 0
-	
+
 	for {
 		if checkDuplicates(banksHistory, join(banks), i) {
 			fmt.Println(giveDuplicatesIndexes(banksHistory, join(banks), i))
@@ -26,7 +27,7 @@ func main() {
 		maxIndex, maxNumber := getMax(banks)
 		banks[maxIndex] = 0
 		for j := 0; j < maxNumber; j++ {
-			banks[(maxIndex + j + 1) % len(banks)] += 1
+			banks[(maxIndex+j+1)%len(banks)] += 1
 		}
 	}
 }
@@ -61,6 +62,6 @@ func giveDuplicatesIndexes(array []string, itemToCheck string, itemToCheckIndex 
 	return 0
 }
 
-func join (array []int) string {
+func join(array []int) string {
 	return strings.Trim(strings.Join(strings.Split(fmt.Sprint(array), " "), ","), "[]")
 }

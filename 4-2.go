@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"sort"
+	"strings"
 )
 
 func main() {
 	input := "" //Here put the input
-	
+
 	validAmount := 0
 	for _, passPraseValid := range checkPassphrases(input) {
 		if passPraseValid == true {
@@ -36,7 +36,7 @@ func passphraseCorrect(input string) bool {
 			sortedSliceSecond := strings.Split(wordSecond, "")
 			sort.Strings(sortedSlice)
 			sort.Strings(sortedSliceSecond)
-			if indexSecond != index && strings.Join(sortedSlice[:],",") == strings.Join(sortedSliceSecond[:],",") {
+			if indexSecond != index && strings.Join(sortedSlice[:], ",") == strings.Join(sortedSliceSecond[:], ",") {
 				return false
 			}
 		}

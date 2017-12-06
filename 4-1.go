@@ -7,7 +7,7 @@ import (
 
 func main() {
 	input := "" //Here put the input
-	
+
 	validAmount := 0
 	for _, passPraseValid := range checkPassphrases(input) {
 		if passPraseValid == true {

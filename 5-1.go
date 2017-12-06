@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 		instructionsArray[index], _ = strconv.Atoi(item)
 	}
 	for true {
-		if pointer >= 0 && pointer <= instructionsArrayLength - 1 {
+		if pointer >= 0 && pointer <= instructionsArrayLength-1 {
 			result += 1
 			instructionsArray[pointer] += 1
 			pointer += instructionsArray[pointer] - 1
