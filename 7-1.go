@@ -2,20 +2,15 @@ package main
 
 import (
 	"fmt"
-	// "strconv"
+	"strconv"
 	"strings"
 )
 
 type Program struct {
 	name string
-	weight string
-	children []string
-}
-
-type ProgramWithPrograms struct {
-	name string
-	weight string
+	weight int
 	children []Program
+	childrenStrings []string
 }
 
 func main() {
@@ -29,9 +24,12 @@ func main() {
 		firstSplit := strings.Split(item, ") -> ")
 		secondSplit := strings.Split(firstSplit[0], " (")
 		newProgram.name = secondSplit[0]
-		newProgram.weight = secondSplit[1]
 		if len(firstSplit) > 1 {
-			newProgram.children = strings.Split(firstSplit[1], ", ")
+			newProgram.weight, _ = strconv.Atoi(secondSplit[1])
+			newProgram.childrenStrings = strings.Split(firstSplit[1], ", ")
+		} else {
+			number := strings.Split(secondSplit[1], ")")
+			newProgram.weight, _ = strconv.Atoi(number[0])
 		}
 		allPrograms = append(allPrograms, newProgram)
 	}
@@ -52,8 +50,8 @@ func findFirstParent(allPrograms []Program) Program {
 
 func findParent(allPrograms []Program, currentParent Program) Program {
 	for _, item := range allPrograms {
-		if currentParent.name != item.name && len(item.children) > 0 {
-			for _, currentChild := range item.children {
+		if currentParent.name != item.name && len(item.childrenStrings) > 0 {
+			for _, currentChild := range item.childrenStrings {
 				if currentChild == currentParent.name {
 					return item
 				}

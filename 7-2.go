@@ -35,11 +35,9 @@ func main() {
 	}
 	firstParent := findFirstParent(allPrograms)
 	allPrograms = deleteByItem(firstParent, allPrograms)
-	fmt.Println(firstParent.name)
 	firstParent, _ = growTree(firstParent, allPrograms)
 	for _, item := range firstParent.children {
-		// fmt.Println(item.name)
-		// fmt.Println(item.weight)
+		fmt.Println(item.name)
 		fmt.Println(recurrentSum(item, item.weight))
 	}
 }
@@ -51,8 +49,8 @@ func recurrentSum(program Program, sum int) int {
 		for _, child := range program.children {
 			sum = recurrentSum(child, sum)
 		}
+		return sum
 	}
-	return sum
 }
 
 func growTree(parent Program, allPrograms []Program) (Program, []Program) {
