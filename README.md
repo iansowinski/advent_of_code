@@ -16,7 +16,13 @@ This is my attempt to solve all AdventOfCode challenges.
   - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/4-2.go)
 - [Day 5](#day-5)
   - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/5-1.go)
-  - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/5-2.go)
+  - [soltion 2](https://github.com/iansowinski/advent_of_code/blob/master/5-2.go)
+- [Day 6](#day-6)
+  - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/6-1.go)
+  - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/6-2.go)
+- [Day 7](#day-7)
+  - [solution 1](https://github.com/iansowinski/advent_of_code/blob/master/7-1.go)
+  - [solution 2](https://github.com/iansowinski/advent_of_code/blob/master/7-2.go)
 
 ## Tasks:
 
