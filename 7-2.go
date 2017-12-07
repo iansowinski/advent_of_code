@@ -36,7 +36,7 @@ func main() {
 	firstParent := findFirstParent(allPrograms)
 	allPrograms = deleteByItem(firstParent, allPrograms)
 	firstParent, _ = growTree(firstParent, allPrograms)
-	fmt.Println(findDefect(firstParent).name)
+	fmt.Println(findDefect(firstParent).weight)
 	// fmt.Println(item.name)
 			// fmt.Println(rightWeight)
 			// fmt.Println(item.weight)
@@ -62,15 +62,36 @@ func findDefect(program Program) Program {
 	for _, item := range program.children {
 		if rightWeight != recurrentSum(item) {
 			defect = item
+			break
 			// anwser := item.weight - (recurrentSum(item) - rightWeight)
 		}
 	}
-	fmt.Println("test")
 	if recurrentSum(defect) != rightWeight {
-		return findDefect(program)
+		return findDefect(defect)
 	}
 	return program
 }
+
+// func findDifference(program Program) Program {
+// 	rightWeight := recurrentSum(program.children[0])
+// 	defect := program.children[0]
+// 	for index, item := range program.children {
+// 		if index != 0 {
+// 			if rightWeight == recurrentSum(item) {
+// 				break
+// 			} else {
+// 				rightWeight = recurrentSum(item)
+// 			}
+// 		}
+// 	}
+// 	for _, item := range program.children {
+// 		if rightWeight != recurrentSum(item) {
+// 			defect = item
+// 			break
+// 		}
+// 	}
+// 	return recurrentSum(defect) - rightWeight
+// }
 
 func recurrentSum(program Program) int {
 	sum := program.weight
