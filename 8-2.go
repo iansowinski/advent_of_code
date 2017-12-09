@@ -10,6 +10,7 @@ func main() {
 	input := "" //Here put the input
 	tempInput := strings.Split(input, "\n")
 	registers := make(map[string]int)
+	maxEver := 0
 	for _, item := range tempInput {
 		splittedItem := strings.Split(item, " if ")
 		operation := strings.Split(splittedItem[0], " ")
@@ -21,9 +22,11 @@ func main() {
 			numberToSubstract, _ := strconv.Atoi(operation[2])
 			registers[operation[0]] -= numberToSubstract
 		}
+		if maxEver < registers[operation[0]] {
+			maxEver = registers[operation[0]]
+		}
 	}
-	max, _ := maxMin(registers)
-	fmt.Println(max)
+	fmt.Println(maxEver)
 }
 
 func maxMin(registers map[string]int) (int, int) {
