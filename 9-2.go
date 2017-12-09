@@ -9,17 +9,7 @@ import (
 func main() {
 	input := "" //Here put the input
 	inputSlice := strings.Split(input, "")
-	inputSlice = clearCommentBrackets(clearExclamation(inputSlice))
-	level := 0
-	score := 0
-	for _, item := range inputSlice {
-		if item == "{" {
-			level += 1
-			score += level
-		} else if item == "}" {
-			level -= 1
-		}
-	}
+	score := scoreCommentBrackets(clearExclamation(inputSlice))
 	fmt.Println(score)
 }
 
@@ -44,7 +34,8 @@ func clearExclamation(input []string) []string {
 	return input
 }
 
-func clearCommentBrackets(input []string) []string {
+func scoreCommentBrackets(input []string) int {
+	score := 0
 	var currentEnd int
 	for {
 		for index, item := range input {
@@ -59,6 +50,7 @@ func clearCommentBrackets(input []string) []string {
 					}
 				}
 				input = deleteByIndexRange(indexStart, indexEnd, input)
+				score += indexEnd - indexStart - 1
 				break
 			}
 		}
@@ -66,5 +58,5 @@ func clearCommentBrackets(input []string) []string {
 			break
 		}
 	}
-	return input
+	return score
 }
