@@ -17,6 +17,9 @@ func main() {
 	marker := 0
 	for _, length := range lengths {
 		var tempArray []int
+		if marker > len(array) {
+			marker = marker - len(array)
+		}
 		if marker + length < len(array) {
 			tempArray = reverse(array[marker:(marker + length)])
 			array = replace(marker, array, tempArray)
@@ -33,8 +36,6 @@ func main() {
 	}
 	fmt.Println(array[0] * array[1])
 }
-
-func recursiveChange
 
 func generateArray (size int) []int {
 	array := make([]int, size)
