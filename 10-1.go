@@ -13,6 +13,11 @@ func main() {
 	// array := []int{0, 1, 2, 3, 4}
 	lengths := []int{94,84,0,79,2,27,81,1,123,93,218,23,103,255,254,243}
 	array := generateArray(256)
+	array = generateHash(lengths, array)
+	fmt.Println(array[0] * array[1])
+}
+
+func generateHash(lengths []int, array []int) []int {
 	skip := 0
 	marker := 0
 	for _, length := range lengths {
@@ -34,7 +39,7 @@ func main() {
 			skip += 1
 		} 
 	}
-	fmt.Println(array[0] * array[1])
+	return array
 }
 
 func generateArray (size int) []int {
