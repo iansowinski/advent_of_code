@@ -7,9 +7,8 @@ import (
 )
 
 func main() {
-	// input := "" //Here put the input
+	input := "" //Here put the input
 	array := generateArray(256)
-	input := "94,84,0,79,2,27,81,1,123,93,218,23,103,255,254,243"
 	byteArrayTemp := []rune(input)
 	toAdd := []rune{17, 31, 73, 47, 23}
 	byteArrayTemp = append(byteArrayTemp, toAdd...)
@@ -33,6 +32,13 @@ func main() {
 			current = current ^ childItem
 		}
 		denseHash[index] = strconv.FormatInt(int64(current), 16)
+	}
+	//hack for disapearing 0 :(
+	for index, item := range denseHash {
+		if len(item) == 1 {
+			item = fmt.Sprintf("0%s", item)
+			denseHash[index] = item
+		}
 	}
 	fmt.Println(strings.Join(denseHash, ""))
 }
