@@ -15,24 +15,28 @@ func main() {
 	marker := 0
 	for _, length := range lengths {
 		var tempArray []int
-		if marker + length + skip < len(array) {
-			tempArray = reverse(array[marker:(marker + length + skip)])
+		if marker + length < len(array) {
+			tempArray = reverse(array[marker:(marker + length)])
 			array = replace(marker, array, tempArray)
-			marker = length + skip
+			marker =  incresePosition(marker, length, skip, len(array))
 			skip += 1
 		} else {
 			leftSide := array[(marker):]
-			rightSide := array[:(length - (len(array) - marker))]
+			rightSide := array[:(length - (len(array) - marker ))]
 			tempArray = append(leftSide, rightSide...)
-			// fmt.Println("tempArray")
-			// fmt.Println(reverse(tempArray))
-			// fmt.Println("/tempArray")
-			array = replace((marker), array, reverse(tempArray))
-			marker = length + skip
+			array = replace(marker, array, reverse(tempArray))
+			marker = incresePosition(marker, length, skip, len(array))
 			skip += 1
 		} 
-		fmt.Println(array)
 	}
+	fmt.Println(array[0] * array[1])
+}
+
+func incresePosition (marker int, length int, skip int, arrayLen int) int {
+	if marker + length + skip < arrayLen {
+		return marker + length + skip
+	}
+	return  marker + length + skip - arrayLen
 }
 
 func reverse (array []int) []int {
