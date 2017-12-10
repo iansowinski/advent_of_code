@@ -9,8 +9,10 @@ import (
 
 func main() {
 	// input := "" //Here put the input
-	lengths := []int{3, 4, 1, 5}
-	array := []int{0, 1, 2, 3, 4}
+	// lengths := []int{3, 4, 1, 5}
+	// array := []int{0, 1, 2, 3, 4}
+	lengths := []int{94,84,0,79,2,27,81,1,123,93,218,23,103,255,254,243}
+	array := generateArray(256)
 	skip := 0
 	marker := 0
 	for _, length := range lengths {
@@ -30,6 +32,18 @@ func main() {
 		} 
 	}
 	fmt.Println(array[0] * array[1])
+}
+
+func recursiveChange
+
+func generateArray (size int) []int {
+	array := make([]int, size)
+	i := 0
+	for i < size {
+		array[i] = i
+		i += 1
+	}
+	return array
 }
 
 func incresePosition (marker int, length int, skip int, arrayLen int) int {
