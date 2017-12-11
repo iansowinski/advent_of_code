@@ -18,7 +18,7 @@ func main() {
 	fmt.Println(max)
 }
 
-func createBoardWithMax (directionsArray []string) ([]hexField, int) {
+func createBoardWithMax(directionsArray []string) ([]hexField, int) {
 	var currentPosition hexField
 	currentPosition.x = 0
 	currentPosition.y = 0
@@ -56,13 +56,12 @@ func createBoardWithMax (directionsArray []string) ([]hexField, int) {
 }
 
 func cubeDistance(firstHex hexField, secondHex hexField) int {
-	return (abs(firstHex.x - secondHex.x) + abs(firstHex.y - secondHex.y) + abs(firstHex.z - secondHex.z)) / 2
+	return (abs(firstHex.x-secondHex.x) + abs(firstHex.y-secondHex.y) + abs(firstHex.z-secondHex.z)) / 2
 }
 
 func abs(number int) int {
 	if number < 0 {
-	   number = -number
+		number = -number
 	}
 	return number
 }
-
