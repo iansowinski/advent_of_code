@@ -18,7 +18,31 @@ func main() {
 	var root int
 	root = 0
 	connectedList := make([]int, root)
-	fmt.Println(len(getConnectedNodesList(0, graph, connectedList)))
+	groupsCounter := 0
+	allKeys := make([]int, 0)
+	for key := range graph {
+		allKeys = append(allKeys, key)
+	}
+	for len(allKeys) != 0 {
+		currentLinked := getConnectedNodesList(allKeys[0], graph, connectedList)
+		allKeys = difference(allKeys, currentLinked)
+		groupsCounter += 1
+	}
+	fmt.Println(groupsCounter)
+}
+
+func difference(a, b []int) []int {
+	mb := map[int]bool{}
+	for _, x := range b {
+		mb[x] = true
+	}
+	ab := []int{}
+	for _, x := range a {
+		if _, ok := mb[x]; !ok {
+			ab = append(ab, x)
+		}
+	}
+	return ab
 }
 
 func getConnectedNodesList(root int, graph map[int][]int, connectedList []int) []int {
