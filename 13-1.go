@@ -13,49 +13,7 @@ type node struct {
 }
 
 func main() {
-	input := `0: 3
-1: 2
-2: 4
-4: 4
-6: 5
-8: 6
-10: 8
-12: 8
-14: 6
-16: 6
-18: 9
-20: 8
-22: 6
-24: 10
-26: 12
-28: 8
-30: 8
-32: 14
-34: 12
-36: 8
-38: 12
-40: 12
-42: 12
-44: 12
-46: 12
-48: 14
-50: 12
-52: 12
-54: 10
-56: 14
-58: 12
-60: 14
-62: 14
-64: 14
-66: 14
-68: 14
-70: 14
-72: 14
-74: 20
-78: 14
-80: 14
-90: 17
-96: 18` //Here put the input
+	input := `` //Here put the input
 	scanner, directions := createScanner(input)
 	max, _ := maxMin(scanner)
 	index := 0
@@ -77,7 +35,7 @@ func main() {
 	fmt.Println(severity)
 }
 
-func createScanner (input string) (map[int][]int, map[int]string) {
+func createScanner(input string) (map[int][]int, map[int]string) {
 	inputListTemp := strings.Split(input, "\n")
 	inputMap := make(map[int][]int, 0)
 	directions := make(map[int]string, 0)
@@ -102,23 +60,23 @@ func moveScanner(scanner map[int][]int, directions map[int]string) (map[int][]in
 			if itemChild == 1 && directions[index] == "up" {
 				if indexChild == maxIndex {
 					scanner[index][indexChild] = 0
-					scanner[index][indexChild - 1] = 1
+					scanner[index][indexChild-1] = 1
 					directions[index] = "down"
 					break
 				} else {
 					scanner[index][indexChild] = 0
-					scanner[index][indexChild + 1] = 1
+					scanner[index][indexChild+1] = 1
 					break
 				}
 			} else if itemChild == 1 && directions[index] == "down" {
 				if indexChild == 0 {
 					scanner[index][indexChild] = 0
-					scanner[index][indexChild + 1] = 1
+					scanner[index][indexChild+1] = 1
 					directions[index] = "up"
 					break
 				} else {
 					scanner[index][indexChild] = 0
-					scanner[index][indexChild - 1] = 1
+					scanner[index][indexChild-1] = 1
 					break
 				}
 			}
